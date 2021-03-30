@@ -89,6 +89,7 @@ def copy_file(source_path, destination_path):
 
 def move_file(source_path, destination_path):
     try:
+        print(source_path, destination_path)
         shutil.move(source_path, destination_path)
     except IOError as e:
         return f'Unable to move:\n\t{e}'
