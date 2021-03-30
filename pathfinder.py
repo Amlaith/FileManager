@@ -8,7 +8,6 @@ class Pathfinder:
 
     def make_path(self, tail):
         head = self.working_directory.split(os.sep)
-
         tail = tail.split('/')
 
         while tail[0] and tail[0][0] == '^':
@@ -25,7 +24,7 @@ class Pathfinder:
         try:
             os.chdir(directory)
         except Exception as e:
-             return f'Unable to change directory: {e}'
+            return f'Unable to change directory: {e}'
         else:
             self.working_directory = directory
             return f'Current working directory: {os.getcwd()}'

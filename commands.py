@@ -60,6 +60,16 @@ def remove_file(path):
         return f'Successfully removed the file:\n\t{path}'
 
 
+def write_to_file(file):
+    try:
+        with open(file, "a") as f:
+            f.write(input())
+    except Exception as e:
+        return e
+    else:
+        return 'Successfully written'
+
+
 def read_file(path):
     try:
         with open(path, "r") as f:
