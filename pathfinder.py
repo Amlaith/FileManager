@@ -32,12 +32,3 @@ class Pathfinder:
 
     def _set_root(self, root):
         self.root = root
-
-
-# p = Pathfinder(os.getcwd())
-# print(p.working_directory)
-# print(p.make_path('text.txt'))
-# print(p.make_path('direct/text.txt'))
-# print(p.os_make_path('text.txt'))
-# print(p.os_make_path('direct/text.txt'))
-# print(p.os_make_path('../'))

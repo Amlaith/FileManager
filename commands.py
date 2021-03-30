@@ -17,7 +17,6 @@ def change_dir(destination):
         return f'Unable to change directory:\n\t{e}'
     else:
         return f'Current working directory:\n\t{os.getcwd()}'
-    # return os.getcwd()
 
 
 def create_dir(path):
@@ -31,7 +30,7 @@ def create_dir(path):
 
 def remove_dir(path):
     try:
-        os.rmdir(path)
+        shutil.rmtree(path)
     except OSError:
         return f'Failed deletion of the directory\n\t{path}'
     else:
