@@ -18,8 +18,6 @@ class Pathfinder:
         path = os.path.join(*head, *tail).replace(':', ':' + os.sep)
 
         if self.root not in path:
-            print('root:', self.root)
-            print('path:', path)
             raise EnvironmentError
         return path
 

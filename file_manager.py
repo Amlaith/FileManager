@@ -7,7 +7,9 @@ from commands import *
 class FileManager(cmd.Cmd):
     def __init__(self):
         super().__init__()
-        self.pathfinder = Pathfinder(os.getcwd())
+        with open('cfg.txt') as f:
+            root = f.readline()
+        self.pathfinder = Pathfinder(root)
 
     intro = 'Welcome to Fima file manager.   Type help or ? to list commands.\n'
     prompt = '(Fima) '
@@ -22,10 +24,10 @@ class FileManager(cmd.Cmd):
             return args
 
     def do_oos(self, arg):
-        print('out of scope')
+        print('Access denied!')
 
     def do_pwd(self, arg):
-        print(get_working_directory())
+        print(self.pathfinder.working_directory)
 
     def do_lsd(self, arg):
         'List of all files and directories in current direction: lsd'
